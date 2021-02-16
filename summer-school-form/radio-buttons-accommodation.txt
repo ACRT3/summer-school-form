@@ -1,0 +1,9 @@
+<div class="fullWidth">
+            <p>Please tick your preference*: </p>
+        </div>
+        
+        
+            <input type="radio" name="accomm" value="Panns Bank" <?php validateField("accomm"); if($_POST["accomm"] == "Panns Bank") print("checked='checked'"); ?>> I would like to stay at Panns Bank student accommodation for the duration of Summer School (check-in Wednesday 1st July and check-out Friday 3rd July)
+            <br>
+            <br>
+            <input type="radio" name="accomm" value="Travel to campus" <?php validateField("accomm"); if($_POST["accomm"] == "Travel to campus") print("checked='checked'"); ?>> I will be travelling to campus and returning home each day.<br>

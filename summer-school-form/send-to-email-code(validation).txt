@@ -1,0 +1,229 @@
+if ($valid) {
+                
+                // ----- START: Create the email ---------------------------------------------------------
+
+                // Create an unique ID to serve as the multipart boundary
+                $notificationMultipartBoundary = "MULTIPART_" . md5(rand());
+
+                // Create the email headers
+                // TODO replace from address
+                $notificationEmailHeaders = "From: Web Team <uit-web@sunderland.ac.uk>\r\n"
+                    //. " Cc:  {$fullname} <{$email}>\r\n"
+                    ."Date: " . date("r") . "\r\n"
+                    ."MIME-Version: 1.0\r\n"
+                    ."Content-type: multipart/alternative;\r\n"
+                    ."  boundary=\"{$notificationMultipartBoundary}\"\r\n"
+                    ."Auto-Submitted: auto-generated\r\n"
+                    ."Precedence: first-class\r\n"
+                    ."X-Priority: 3\r\n"
+                    ."X-MSMail-Priority: Normal\r\n"
+                    ."Priority: Normal\r\n"
+                    ."Importance: Normal\r\n"
+                    ."X-Mailer: UoS/www/summerschoolform\r\n";
+
+                // Create the Plain Text part
+                $notificationEmailMessageBodyFormatPlain = "The following Summer School booking request has been submitted:";
+                $notificationEmailMessageBodyFormatPlain .= "\r\n";
+                $notificationEmailMessageBodyFormatPlain .= str_repeat("=*", 36);
+                $notificationEmailMessageBodyFormatPlain .= "\r\n\r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Name: {$_POST["firstname"]} {$_POST["lastname"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Date of Birth: {$_POST["dob"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Mobile: {$_POST["mobile"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Address: {$_POST["address1"]} {$_POST["address2"]} {$_POST["address3"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "City: {$_POST["city"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Postcode: {$_POST["postcode"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Email Address: {$_POST["email"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Current School or College: {$_POST["currentschoolorcollege"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Hoodie Size: {$_POST["hoodiesize"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Subject 1: {$_POST["subject1"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Course 1: {$_POST["course1"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Subject 2: {$_POST["subject2"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Course 2: {$_POST["course2"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Accommodation: {$_POST["accomm"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Additional Support: {$_POST["additional_support"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Disability Description: {$_POST["disabilityYes"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Dietary Requirements: {$_POST["dietary_req"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Next of Kin: {$_POST["next_of_kin"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Next of Kin Relationship: {$_POST["next_of_kin_relationship"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Next of Kin Contact details: {$_POST["next_of_kin_phone"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Update Via Email: {$_POST["emailopt"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Update Via Phone: {$_POST["phoneopt"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Update Via Text: {$_POST["textopt"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "Update Via Post: {$_POST["postopt"]} \r\n";
+                $notificationEmailMessageBodyFormatPlain .= "\r\n\r\n";
+                $notificationEmailMessageBodyFormatPlain .= str_repeat("=*", 36);
+                $notificationEmailMessageBodyFormatPlain .= "\r\n\r\n";
+
+                // Create the HTML part
+                $notificationEmailMessageBodyFormatHTML = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" =
+\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">
+<html xmlns=3D3D\"http://www.w3.org/1999/xhtml\">
+<head>
+    <title>Feedback on the tour</title>
+    <meta http-equiv=3D\"Content-Type\" content=3D\"text/html; =
+charset=3DUTF-8\" />
+    <meta name=3D\"viewport\" content=3D\"width=3Ddevice-width, =
+initial-scale=3D1.0\"/>
+</head>
+<body style=3D\"margin: 0; padding: 0;\">
+    <table border=3D\"0\" cellpadding=3D\"0\" cellspacing=3D\"0\" =
+width=3D\"100%\">
+        <tr>
+            <td>
+                <table align=3D\"center\" border=3D\"1\" cellpadding=3D\"0\" =
+cellspacing=3D\"0\" width=3D\"600\" style=3D\"border-collapse: collapse;\">
+                    <tr>
+                        <td align=3D\"center\" bgcolor=3D\"#003359\" =
+style=3D\"padding: 40px 0 30px 0;\">
+                            <img =
+src=3D\"https://www.sunderland.ac.uk/images/greentheme/img/logo/logo.png\" =
+alt=3D\"[IMG] University of Sunderland\" width=3D\"180\" height=3D\"84\" =
+style=3D\"display: block;\" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor=3D\"#ffffff\" style=3D\"padding: 40px =
+30px 40px 30px;\">
+                            <table border=3D\"0\" cellpadding=3D\"0\" =
+cellspacing=3D\"0\" width=3D\"100%\">
+                                <tr>
+                                    <td>
+                                        <h1>Summer School Request</h1>
+                                        <p>The following Summer School booking request has been submitted:</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table border=3D\"0\" =
+cellpadding=3D\"0\" cellspacing=3D\"0\" width=3D\"100%\">
+                                            <tr>
+                                                <td width=3D\"260\" =
+valign=3D\"top\">
+                                                    <table border=3D\"0\" =
+cellpadding=3D\"0\" cellspacing=3D\"0\" width=3D\"100%\">
+                                                        <tr><td 
+style=3D\"padding: 25px 0 0 0;\" colspan=3D\"2\"></tr>
+                                                        <tr><td>Name: </td>
+                                                        <td>{$_POST["firstname"]} {$_POST["lastname"]}</td></tr>
+                                                        
+                                                        <tr><td>Date of Birth: </td>
+                                                        <td>{$_POST["dob"]}</td></tr>
+                                                        
+                                                        <tr><td>Mobile: </td>
+                                                        <td>{$_POST["mobile"]}</td></tr>
+                                                        
+                                                        <tr><td>Address: </td>
+                                                        <td>{$_POST["address1"]} {$_POST["address2"]} {$_POST["address3"]}</td></tr>
+                                                        
+                                                        <tr><td>City: </td>
+                                                        <td>{$_POST["city"]}</td></tr>
+                                                        
+                                                        <tr><td>Postcode: </td>
+                                                        <td>{$_POST["postcode"]}</td></tr>
+                                                        
+                                                        <tr><td>Email Address: </td>
+                                                        <td>{$_POST["email"]}</td></tr>
+                                                        
+                                                        <tr><td>Current School or College: </td>
+                                                        <td>{$_POST["currentschoolorcollege"]}</td></tr>
+                                                        
+                                                        <tr><td>Hoodie Size: </td>
+                                                        <td>{$_POST["hoodiesize"]}</td></tr>
+                                                       
+                                                        <tr><td>Subject 1: </td>
+                                                        <td>{$_POST["subject1"]}</td></tr>
+                                                        
+                                                        <tr><td>Course 1: </td>
+                                                        <td>{$_POST["course1"]}</td></tr>
+                                                        
+                                                        <tr><td>Subject 2: </td>
+                                                        <td>{$_POST["subject2"]}</td></tr>
+                                                        
+                                                        <tr><td>Course 2: </td>
+                                                        <td>{$_POST["course2"]}</td></tr>
+                                                        
+                                                        <tr><td>Accommodation: </td>
+                                                        <td>{$_POST["accomm"]}</td></tr>
+                                                        
+                                                        <tr><td>Additional Support:</td>
+                                                        <td>{$_POST["additional_support"]}</td></tr>
+                                                        
+                                                        <tr><td>Disablity Description: </td>
+                                                        <td>{$_POST["disabilityYes"]}</td></tr>
+                                                        
+                                                        <tr><td>Dietary Requirements: </td>
+                                                        <td>{$_POST["dietary_req"]}</td></tr>
+                                                        
+                                                        <tr><td>Next of kin: </td>
+                                                        <td>{$_POST["next_of_Kin"]}</td></tr>
+                                                        
+                                                        <tr><td>Next of kin relationship: </td>
+                                                        <td>{$_POST["next_of_Kin_Relationship"]}</td></tr>
+                                                        
+                                                        <tr><td>Next of kin contact details: </td>
+                                                        <td>{$_POST["next_of_Kin_Phone"]}</td></tr>
+                                                        
+                                                        <tr><td>Update Via Email: </td>
+                                                        <td>{$_POST["emailopt"]}</td></tr>
+                                                        
+                                                        <tr><td>Update Via Phone: </td>
+                                                        <td>{$_POST["phoneopt"]}</td></tr>
+                                                        
+                                                        <tr><td>Update Via Text: </td>
+                                                        <td>{$_POST["textopt"]}</td></tr>
+                                                        
+                                                        <tr><td>Update Via Post: </td>
+                                                        <td>{$_POST["postopt"]}</td></tr>
+                                                        
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor=3D\"#006470\" style=3D\"padding: 30px =
+30px 30px 30px; color:white;\">
+                            <table border=3D\"0\" cellpadding=3D\"0\" =
+cellspacing=3D\"0\" width=3D\"100%\">
+                                <td width=3D\"75%\">
+                                    (c) University of Sunderland<br />
+                                </td>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </tr>
+    </td>
+    </table>
+</body>
+</html>";
+
+                // Create the email message body with the plain text, HTML and attachment parts
+                $notificationEmailMessageBody = "This is a multi-part message in MIME format.\r\n";
+                $notificationEmailMessageBody .= "\r\n--{$notificationMultipartBoundary}\r\n";
+                $notificationEmailMessageBody .= "Content-type: text/plain; charset=\"ISO-8859-1\"\r\n";
+                $notificationEmailMessageBody .= "Content-transfer-encoding: quoted-printable\r\n";
+                $notificationEmailMessageBody .= "\r\n";
+                $notificationEmailMessageBody .= "{$notificationEmailMessageBodyFormatPlain}";
+                $notificationEmailMessageBody .= "\r\n\r\n--{$notificationMultipartBoundary}\r\n";
+                $notificationEmailMessageBody .= "Content-type: text/html; charset=\"ISO-8859-1\"\r\n";
+                $notificationEmailMessageBody .= "Content-transfer-encoding: quoted-printable\r\n";
+                $notificationEmailMessageBody .= "\r\n";
+                $notificationEmailMessageBody .= "{$notificationEmailMessageBodyFormatHTML}";
+                $notificationEmailMessageBody .= "\r\n\r\n--{$notificationMultipartBoundary}\r\n";
+
+                // Send the email
+                // TODO replace to address
+                mail("Alex Cartwright <alex.cartwright@sunderland.ac.uk>", "Summer School Request",
+                     $notificationEmailMessageBody, $notificationEmailHeaders, "-falex.cartwright@sunderland.ac.uk");
+                
+                
+                
+                // ----- END: Create the email -----------------------------------------------------------

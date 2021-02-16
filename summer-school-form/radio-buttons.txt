@@ -1,0 +1,5 @@
+<input type="radio" id="pannsBank" name="pannsBank" value="pannsBank" checked style="float: left;">
+        <label for="pannsBank" class="float: right"> I would like to stay at Panns Bank student accommodation for the duration of Summer School (check-in Wednesday 1st July and check-out Friday 3 July</label>
+    
+        <input type="radio" id="home" name="home" value="home" style="float: left;">
+        <label for="home" class="float: right"> I will be travelling to campus and returning home each day.</label>

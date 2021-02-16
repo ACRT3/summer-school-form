@@ -1,0 +1,153 @@
+<p>Please tell us when you are available to attend your Individual Tour. If you would like to speak to multiple academic members of staff, it may be worth attending an <a href="https://www.sunderland.ac.uk/open-days/">Open Day</a> instead.</p>
+ <p>Please give at least 2 weeks notice before an Individual Tour. The tours are available 9:30am-5pm, Monday-Friday.</p>
+ <p>Option 1</p>
+ <label for="date1" class="sr-only">Date*</label>
+ <input placeholder="Date*" type="text" name="date1" class="datepicker" id="date1"   value="" >
+ <label for="time1" class="sr-only">Time*</label>
+ <select id="time1" name="time1" >  
+  <option value="" disabled selected>Time slots *</option> 
+  <option value="9:30am"  >9:30am</option>
+  <option value="10:00am"  >10:00am</option>
+  <option value="10:30am"  >10:30am</option>
+  <option value="11:00am"  >11:00am</option>
+  <option value="11:30am"  >11:30am</option>
+  <option value="12:00pm"  >12:00pm</option>
+  <option value="12:30pm"  >12:30pm</option>
+  <option value="13:00pm"  >13:00pm</option>
+  <option value="13:30pm"  >13:30pm</option>
+  <option value="14:00pm"  >14:00pm</option>
+  <option value="14:30pm"  >14:30pm</option>
+  <option value="15:00pm"  >15:00pm</option>
+  <option value="15:30pm"  >15:30pm</option>
+  <option value="16:00pm"  >16:00pm</option>
+  <option value="16:30pm"  >16:30pm</option>
+</select>
+<p>Option 2</p>
+ <label for="date2" class="sr-only">Date*</label>
+ <input placeholder="Date*" type="text" name="date2" id="date2" class="datepicker"   value="" >
+ <label for="time2" class="sr-only">Time*</label>
+ <select id="time2" name="time2" >
+  <option value="" disabled selected>Time slots *</option> 
+  <option value="9:30am"  >9:30am</option>
+  <option value="10:00am"  >10:00am</option>
+  <option value="10:30am"  >10:30am</option>
+  <option value="11:00am"  >11:00am</option>
+  <option value="11:30am"  >11:30am</option>
+  <option value="12:00pm"  >12:00pm</option>
+  <option value="12:30pm"  >12:30pm</option>
+  <option value="13:00pm"  >13:00pm</option>
+  <option value="13:30pm"  >13:30pm</option>
+  <option value="14:00pm"  >14:00pm</option>
+  <option value="14:30pm"  >14:30pm</option>
+  <option value="15:00pm"  >15:00pm</option>
+  <option value="15:30pm"  >15:30pm</option>
+  <option value="16:00pm"  >16:00pm</option>
+  <option value="16:30pm"  >16:30pm</option>
+ </select>
+<p>Option 3</p>
+ <label for="date3" class="sr-only">Date</label>
+ <input placeholder="Date" type="text" name="date3" id="date3" class="datepicker"   value="" >
+ <label for="time3" class="sr-only">Time</label>
+ <select id="time3" name="time3" >
+  <option value="" disabled selected>Time slots</option> 
+  <option value="9:30am"  >9:30am</option>
+  <option value="10:00am"  >10:00am</option>
+  <option value="10:30am"  >10:30am</option>
+  <option value="11:00am"  >11:00am</option>
+  <option value="11:30am"  >11:30am</option>
+  <option value="12:00pm"  >12:00pm</option>
+  <option value="12:30pm"  >12:30pm</option>
+  <option value="13:00pm"  >13:00pm</option>
+  <option value="13:30pm"  >13:30pm</option>
+  <option value="14:00pm"  >14:00pm</option>
+  <option value="14:30pm"  >14:30pm</option>
+  <option value="15:00pm"  >15:00pm</option>
+  <option value="15:30pm"  >15:30pm</option>
+  <option value="16:00pm"  >16:00pm</option>
+  <option value="16:30pm"  >16:30pm</option>
+ </select>
+
+  <label for="travelling" class="sr-only">How will you be travelling to the University? *</label>
+  <select id="travelling" name="travelling" >  
+    <option value="" disabled selected>How will you be travelling to the University? *</option> 
+    <option value="Car"  >Car</option>
+    <option value="Bus"  >Bus</option>
+    <option value="Train"  >Train</option>
+    <option value="Other"  >Other</option>
+  </select>
+  <label for="carreg" class="sr-only">If car, please enter your registration number *</label>
+  <input placeholder="If car, please enter your registration number" type="text" name="carreg" id="carreg" value="" >
+
+  <label for="numberofpeople" class="sr-only">How many people will be coming with you? *</label>
+  <select id="numberofpeople" name="numberofpeople" >  
+    <option value="" disabled selected>How many people will be coming with you? *</option> 
+    <option value="0"  >0</option>
+    <option value="1"  >1</option>
+    <option value="2"  >2</option>
+    <option value="3"  >3</option>
+<option value="4"  >4</option>
+<option value="5"  >5</option>
+  </select>
+
+ <label for="accommodationtour">Would you like a tour of our student accommodation? *</label>
+  <input type="radio" class="accommodationtouryes" name="accommodationtour" id="accommodationtour" value="yes"  >Yes
+  <label for="accommodationtour2" class="sr-only">accommodationtour label</label>
+  <input type="radio" class="accommodationtourno" name="accommodationtour" id="accommodationtour2" value="no"  >No
+
+  <label for="hallsvisit" class="sr-only">If yes, please select a halls of residence to visit?</label>
+  <select multiple id="hallsvisit" class="hallsvisit" name="hallsvisit[]" > 
+    <option value="" disabled>If yes, please select a halls of residence to visit?</option> 
+    <option value='Any' >Any</option><option value='Clanny House' >Clanny House</option><option value='The Forge' >The Forge</option><option value='Panns Bank' >Panns Bank</option><option value='Scotia Quays' >Scotia Quays</option>  </select>
+
+  <label for="talktostaff">Would you like to talk to an academic member of staff about your chosen subject? *</label>
+   <input type="radio" id="talktostaff" name="talktostaff" value="yes"  >Yes
+   <label for="talktostaff2" class="sr-only">talktostaff label</label>
+   <input type="radio" id="talktostaff2" name="talktostaff" value="no" >No
+
+  <label for="disabilities">Do you or anyone in your party have any disabilities or special requirements that we should be aware of? *</label>
+   <input type="radio" id="disabilities" class="disabilites1" name="disabilities" value="yes"  >Yes
+   <label for="disabilities2" class="sr-only">disabilities label</label>
+   <input type="radio" id="disabilities2" class="disabilites2" name="disabilities" value="no"  >No
+
+   <label for="disabilitiesyes" class="sr-only">If yes, please outline them</label>
+   <textarea placeholder="If yes, please outline them..." name="disabilitiesyes" class="disabilitiesyes" id="disabilitiesyes" ></textarea>
+
+<br><br> <p>Keep me up to date relating to my interest in the University of Sunderland via:</p>
+<div class="choice"><label class="sr-only" for="comms-12">Email</label><input type="checkbox" name="emailopt" id="comms-12" data-name="comms12" data-check="optin" value="Yes"  ><p><em class="fa fa-at"></em>Email</p></div>
+<div class="choice"><label class="sr-only" for="comms-13">Phonecalls</label><input type="checkbox" name="phoneopt" id="comms-13" data-name="comms13" data-check="optin" value="Yes"  ><p><em class="fa fa-phone"></em>Telephone</p></div>
+<div class="choice"><label class="sr-only" for="comms-14">Text Messaging</label><input type="checkbox" name="textopt" id="comms-14" data-name="comms14" data-check="optin" value="Yes"  ><p><em class="fa fa-mobile"></em>Text message/SMS</p></div>
+<div class="choice"><label class="sr-only" for="comms-15">Letters and Mailings</label><input type="checkbox" name="postopt" id="comms-15" data-name="comms15" data-check="optin" value="Yes"  ><p><em class="fa fa-envelope"></em>Post</p></div>
+<p>You may unsubscribe at any time.</p>
+
+<div class="disclaimer">
+<p>The University of Sunderland is collecting this information in order for you to register for an Individual Tour. Your information will be stored securely and used only for the administration and provision of this request. Further information on how your data is stored and used can be found in our <a href="https://www.sunderland.ac.uk/privacy-and-cookies/privacy-notice-marketing">Privacy notice - marketing</a>.</p>
+</div>
+
+
+  <div id="optin-popup" class="apply-popup opt_popup mfp-hide">
+    <section id="upcoming">
+      <div class="contain">
+
+         <p><strong>Oops! You've not opted in to receiving information relating to your interest in the University of Sunderland via:</strong></p>
+<div class="choice-popup"><label class="sr-only" for="comms-121">Email</label><input type="checkbox" name="emailopt" id="comms-121" data-name="comms12" data-check="optin" value="Yes"><p><em class="fa fa-at"></em>Email</p></div>
+<div class="choice-popup"><label class="sr-only" for="comms-131">Phonecalls</label><input type="checkbox" name="phoneopt" id="comms-131" data-name="comms13" data-check="optin" value="Yes"><p><em class="fa fa-phone"></em>Telephone</p></div>
+<div class="choice-popup"><label class="sr-only" for="comms-141">Text Messaging</label><input type="checkbox" name="textopt" id="comms-141" data-name="comms14" data-check="optin" value="Yes"><p><em class="fa fa-mobile"></em>Text message/SMS</p></div>
+<div class="choice-popup"><label class="sr-only" for="comms-151">Letters and Mailings</label><input type="checkbox" name="postopt" id="comms-151" data-name="comms15" data-check="optin" value="Yes"><p><em class="fa fa-envelope"></em>Post</p></div>
+<p>You may unsubscribe at any time.</p>
+
+            <input id="submit_button" type="submit" name="submit" value="Continue">
+
+      </div>
+    </section>
+  </div>
+
+       <script src="https://www.google.com/recaptcha/api.js" type="text/javascript"></script>
+<label for="g-recaptcha-response" class="sr-only">recaptcha</label>
+     <div class="g-recaptcha" data-sitekey="6LfzjQUAAAAAABXGMIuRVkfADa_XYAYHVPgxWVp0"></div>
+
+     <br>
+
+   <a style="float: left;" onclick="step2();"><u>Back</u></a><p></p> 
+      <input style="float: right;" id="submit_button" type="submit" class="opt_in_submit" name="submit" value="Submit">
+      <a data-mfp-src="#optin-popup" class="button opt_in_popup popup-optin">Submit</a>
+   <br>
